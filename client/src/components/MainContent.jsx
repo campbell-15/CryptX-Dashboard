@@ -20,8 +20,8 @@ const MainContent = () => {
   }, []);
 
   return (
-    <div className="flex flex-col p-4 w-full overflow-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+    <div className="flex flex-col p-4 w-full h-full overflow-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4 flex-1">
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
@@ -61,7 +61,7 @@ const MainContent = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4 flex-1">
         <div className="bg-white p-4 rounded shadow h-full flex flex-col justify-between">
           <div className="text-lg font-bold">Live Market</div>
           <ul className="mt-4 flex-1">

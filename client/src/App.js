@@ -11,11 +11,13 @@ const App = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex h-screen">
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="flex-1 flex flex-col">
         <Header toggleSidebar={toggleSidebar} />
-        <MainContent />
+        <div className="flex-1 overflow-auto">
+          <MainContent />
+        </div>
       </div>
     </div>
   );
