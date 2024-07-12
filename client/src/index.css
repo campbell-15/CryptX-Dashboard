@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* to center the signup and login pages  */
+
+.center-auth {
+  @apply flex justify-center items-center min-h-screen;
+}

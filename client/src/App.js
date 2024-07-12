@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-  RedirectToSignIn,
-  SignedIn,
-  SignedOut,
-  SignIn,
-  SignUp,
-} from "@clerk/clerk-react";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 import MainContent from "./components/MainContent";
 
 const App = () => {
@@ -21,10 +17,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<SignIn />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route
-          path="/*"
+          path="/"
           element={
             <SignedIn>
               <div className="flex h-screen">
@@ -43,7 +39,7 @@ const App = () => {
           path="*"
           element={
             <SignedOut>
-              <RedirectToSignIn />
+              <Navigate to="/login" />
             </SignedOut>
           }
         />
