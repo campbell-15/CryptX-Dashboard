@@ -12,7 +12,7 @@ const Sidebar = () => {
     return (
         <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
             <div className="toggle-btn" onClick={toggleSidebar}>
-                <i className={`fas ${isOpen ? 'fas fa-bars' : 'fa-chevron-right'}`}></i>
+                <i className={`fas ${isOpen ? 'fa-chevron-left' : 'fa-chevron-right'}`}></i>
             </div>
             <div className="logo">
                 <h1>CryptX</h1>
