@@ -21,7 +21,7 @@ const Sidebar = () => {
                 <ul>
                     <li className="menu-item active">
                         <i className="icon overview-icon"></i>
-                        <span>Overview</span>
+                        <span className='overview'>Overview</span>
                     </li>
                     <li className="menu-item">
                         <i className="icon chart-icon"></i>

@@ -51,7 +51,7 @@ body {
 .menu-item {
     display: flex;
     align-items: center;
-    padding: 15px 20px;
+    padding: 20px 20px;
     color: #333;
     text-decoration: none;
     transition: background-color 0.3s, padding 0.3s;
@@ -78,40 +78,52 @@ body {
     content: '\f15c';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
+    padding-right: 15px;
+    color: #6154F0;
+}
+
+.overview {
+    color: #6154F0;
 }
 
 .chart-icon::before {
     content: '\f080';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
+    padding-right: 15px;
 }
 
 .transactions-icon::before {
     content: '\f0ec';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
+    padding-right: 15px;
 }
 
 .wallet-icon::before {
     content: '\f555';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
+    padding-right: 15px;
 }
 
 .mailbox-icon::before {
     content: '\f0e0';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
+    padding-right: 15px;
 }
 
 .settings-icon::before {
     content: '\f013';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
+    padding-right: 15px;
 }
 
 .logout-icon::before {
     content: '\f2f5';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
+    padding-right: 15px;
 }
