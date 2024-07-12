@@ -1,90 +1,117 @@
-    body {
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        background-color: #f8f8f8;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px;
-    }
-    
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 30px;
-    }
-    
-    .menu {
-        width: 100%;
-    }
-    
-    .menu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .menu-item {
-        display: flex;
-        align-items: center;
-        padding: 15px 20px;
-        color: #333;
-        text-decoration: none;
-        transition: background-color 0.3s;
-    }
-    
-    .menu-item:hover,
-    .menu-item.active {
-        background-color: #eaeaea;
-    }
-    
-    .icon {
-        margin-right: 10px;
-    }
-    
-    .overview-icon::before {
-        content: '\f15c';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-    }
-    
-    .chart-icon::before {
-        content: '\f080';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-    }
-    
-    .transactions-icon::before {
-        content: '\f0ec';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-    }
-    
-    .wallet-icon::before {
-        content: '\f555';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-    }
-    
-    .mailbox-icon::before {
-        content: '\f0e0';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-    }
-    
-    .settings-icon::before {
-        content: '\f013';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-    }
-    
-    .logout-icon::before {
-        content: '\f2f5';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-    }
-    
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    transition: width 0.3s;
+    position: relative;
+}
+
+.sidebar.closed {
+    width: 80px;
+}
+
+.sidebar .toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.sidebar .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    transition: opacity 0.3s;
+}
+
+.sidebar.closed .logo h1 {
+    opacity: 0;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #eaeaea;
+}
+
+.menu-item i {
+    margin-right: 10px;
+}
+
+.menu-item span {
+    transition: opacity 0.3s;
+}
+
+.sidebar.closed .menu-item span {
+    opacity: 0;
+}
+
+.overview-icon::before {
+    content: '\f15c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.chart-icon::before {
+    content: '\f080';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.transactions-icon::before {
+    content: '\f0ec';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.wallet-icon::before {
+    content: '\f555';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.mailbox-icon::before {
+    content: '\f0e0';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.settings-icon::before {
+    content: '\f013';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.logout-icon::before {
+    content: '\f2f5';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
