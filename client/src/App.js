@@ -26,7 +26,7 @@ const App = () => {
 
   useEffect(() => {
     if (isSignedIn) {
-      if (location.pathname === "/login") {
+      if (location.pathname === "/" || location.pathname === "/login") {
         navigate("/app");
       }
     } else {
