@@ -17,10 +17,17 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
         <Route
           path="/"
+          element={
+            <SignedOut>
+              <Signup />
+            </SignedOut>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/app"
           element={
             <SignedIn>
               <div className="flex h-screen">
@@ -39,7 +46,7 @@ const App = () => {
           path="*"
           element={
             <SignedOut>
-              <Navigate to="/login" />
+              <Navigate to="/" />
             </SignedOut>
           }
         />
