@@ -21,30 +21,30 @@ const MainContent = () => {
 
   return (
     <div className="flex flex-col p-4 w-full overflow-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-        <div className="grid grid-cols-2 gap-4 col-span-2">
-          <div className="bg-white p-4 rounded shadow">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
               <div className="text-lg font-bold">$40,291</div>
               <div className="text-green-500">+0.25%</div>
             </div>
             <div className="text-gray-400">Bitcoin - BTC</div>
           </div>
-          <div className="bg-white p-4 rounded shadow">
+          <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
               <div className="text-lg font-bold">$18,291</div>
               <div className="text-green-500">+0.25%</div>
             </div>
             <div className="text-gray-400">Ethereum - ETH</div>
           </div>
-          <div className="bg-white p-4 rounded shadow">
+          <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
               <div className="text-lg font-bold">$8,291</div>
               <div className="text-green-500">+0.25%</div>
             </div>
             <div className="text-gray-400">Litecoin - ITL</div>
           </div>
-          <div className="bg-white p-4 rounded shadow">
+          <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
               <div className="text-lg font-bold">$3,291</div>
               <div className="text-red-500">-2.05%</div>
@@ -52,21 +52,19 @@ const MainContent = () => {
             <div className="text-gray-400">Cardano - ADA</div>
           </div>
         </div>
-        <div className="bg-white p-4 rounded shadow h-full">
+        <div className="bg-white p-4 rounded shadow h-full flex flex-col justify-between">
           <div className="text-lg font-bold">BTC Prices</div>
-          <div className="h-32 bg-gray-100 flex items-center justify-center">
-            {btcPrice ? (
-              <span className="text-2xl">${btcPrice}</span>
-            ) : (
-              <span>Loading...</span>
-            )}
+          <div className="mt-4 flex-1 flex items-center justify-center">
+            <div className="text-2xl font-bold">
+              {btcPrice ? `$${btcPrice}` : "Loading..."}
+            </div>
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="bg-white p-4 rounded shadow">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <div className="bg-white p-4 rounded shadow h-full flex flex-col justify-between">
           <div className="text-lg font-bold">Live Market</div>
-          <ul className="mt-4">
+          <ul className="mt-4 flex-1">
             <li className="flex justify-between items-center mb-2">
               <div>Ethereum</div>
               <div className="text-green-500">+14.02%</div>
@@ -89,9 +87,9 @@ const MainContent = () => {
             </li>
           </ul>
         </div>
-        <div className="bg-white p-4 rounded shadow">
+        <div className="bg-white p-4 rounded shadow h-full flex flex-col justify-between">
           <div className="text-lg font-bold">Transactions</div>
-          <ul className="mt-4">
+          <ul className="mt-4 flex-1">
             <li className="flex justify-between items-center mb-2">
               <div>Ethereum</div>
               <div>Received</div>

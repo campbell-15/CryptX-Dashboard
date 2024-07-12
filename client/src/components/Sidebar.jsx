@@ -1,13 +1,18 @@
 import React from "react";
 
-const Sidebar = ({ isOpen }) => {
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div
       className={`bg-gray-100 w-64 h-screen p-4 fixed lg:static ${
         isOpen ? "block" : "hidden"
       } lg:block`}
     >
-      <div className="text-2xl font-bold mb-6">CryptX</div>
+      <div className="flex justify-between items-center mb-6">
+        <div className="text-2xl font-bold">CryptX</div>
+        <button className="lg:hidden" onClick={toggleSidebar}>
+          <i className="icon-close"></i>
+        </button>
+      </div>
       <ul>
         <li className="mb-4 flex items-center">
           <div className="w-8 h-8 bg-purple-500 rounded-full mr-2"></div>

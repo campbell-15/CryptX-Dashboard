@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className="flex">
-      <Sidebar isOpen={isSidebarOpen} />
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="flex-1 flex flex-col">
         <Header toggleSidebar={toggleSidebar} />
         <MainContent />
