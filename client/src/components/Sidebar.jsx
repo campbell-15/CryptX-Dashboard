@@ -1,8 +1,12 @@
 import React from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen }) => {
   return (
-    <div className="bg-gray-100 w-64 h-screen p-4">
+    <div
+      className={`bg-gray-100 w-64 h-screen p-4 fixed lg:static ${
+        isOpen ? "block" : "hidden"
+      } lg:block`}
+    >
       <div className="text-2xl font-bold mb-6">CryptX</div>
       <ul>
         <li className="mb-4 flex items-center">
