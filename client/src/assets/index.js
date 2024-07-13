@@ -5,5 +5,6 @@ import Settings from "./setting-2.svg";
 import Sms from "./sms.svg";
 import Wallet from "./wallet-2.svg";
 import Wallet2 from "./wallet-minus.svg";
+import Graph from "./graph.svg"
 
-export { Logo, Sqaure, Logout, Settings, Sms, Wallet, Wallet2 };
+export { Logo, Sqaure, Logout, Settings, Sms, Wallet, Wallet2, Graph };

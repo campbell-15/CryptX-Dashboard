@@ -1,5 +1,14 @@
 import React from "react";
-import { Logo } from "../assets";
+import {
+  Logo,
+  Sqaure,
+  Logout,
+  Settings,
+  Sms,
+  Wallet,
+  Wallet2,
+  Graph,
+} from "../assets";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
@@ -20,31 +29,51 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       </div>
       <ul>
         <li className="mb-4 flex items-center">
-          <div className="w-8 h-8 bg-purple-500 rounded-full mr-2"></div>
+          <div className="w-8 h-8 mr-2">
+            <img src={Sqaure} alt="CryptX Logo" />
+          </div>
           Overview
         </li>
         <li className="mb-4 flex items-center">
-          <div className="w-8 h-8 bg-gray-500 rounded-full mr-2"></div>
+          <div className="w-8 h-8 mr-2">
+            {" "}
+            <img src={Graph} alt="CryptX Logo" />
+          </div>
           Chart
         </li>
         <li className="mb-4 flex items-center">
-          <div className="w-8 h-8 bg-gray-500 rounded-full mr-2"></div>
+          <div className="w-8 h-8 mr-2">
+            {" "}
+            <img src={Wallet2} alt="CryptX Logo" />
+          </div>
           Transactions
         </li>
         <li className="mb-4 flex items-center">
-          <div className="w-8 h-8 bg-gray-500 rounded-full mr-2"></div>
+          <div className="w-8 h-8 mr-2">
+            {" "}
+            <img src={Wallet} alt="CryptX Logo" />
+          </div>
           Wallet
         </li>
         <li className="mb-4 flex items-center">
-          <div className="w-8 h-8 bg-gray-500 rounded-full mr-2"></div>
+          <div className="w-8 h-8 mr-2">
+            {" "}
+            <img src={Sms} alt="CryptX Logo" />
+          </div>
           Mail Box
         </li>
         <li className="mb-4 flex items-center">
-          <div className="w-8 h-8 bg-gray-500 rounded-full mr-2"></div>
+          <div className="w-8 h-8 mr-2">
+            {" "}
+            <img src={Settings} alt="CryptX Logo" />
+          </div>
           Setting
         </li>
         <li className="mb-4 flex items-center">
-          <div className="w-8 h-8 bg-gray-500 rounded-full mr-2"></div>
+          <div className="w-8 h-8 mr-2">
+            {" "}
+            <img src={Logout} alt="CryptX Logo" />
+          </div>
           Logout
         </li>
       </ul>
