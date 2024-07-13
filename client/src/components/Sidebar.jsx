@@ -1,4 +1,5 @@
 import React from "react";
+import { Logo } from "../assets";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
@@ -8,7 +9,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       } lg:block`}
     >
       <div className="flex justify-between items-center mb-6">
-        <div className="text-2xl font-bold">CryptX</div>
+        <div className="text-2xl font-bold">
+          {" "}
+          <img src={Logo} alt="CryptX Logo" />
+          CryptX
+        </div>
         <button className="lg:hidden" onClick={toggleSidebar}>
           <i className="icon-close"></i>
         </button>
