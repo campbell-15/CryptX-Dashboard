@@ -1,16 +1,19 @@
 import React from 'react';
 import Sidebar from './Components/Sidebar/Sidebar';
+import TopBar from './Components/TopBar/TopNav';
 import './App.css';
 
-function App() {
-  return (
-    <div className="app">
-      <Sidebar />
-      <div className="content">
-        {/* Your other components will go here */}
-      </div>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div className="app-container">
+            <Sidebar />
+            <div className="main-content">
+                <TopBar />
+                {/* Other components for the main content */}
+            </div>
+        </div>
+    );
+};
 
 export default App;
+
