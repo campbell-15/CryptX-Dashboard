@@ -34,10 +34,10 @@ const Header = ({ toggleSidebar }) => {
         </div>
         <div className="flex items-center space-x-2">
           <button
-            className="lg:hidden w-7 h-7 bg-gray-200 rounded-full flex items-center justify-center"
+            className="lg:hidden w-7 h-7 rounded-full flex items-center justify-center"
             onClick={toggleSidebar}
           >
-            <i className="icon-menu"></i>
+            <img src={Question} alt="Question Icon" />
           </button>
           <div
             className="hidden lg:flex items-center space-x-3"
