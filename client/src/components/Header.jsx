@@ -1,5 +1,5 @@
 import React from "react";
-import { Question, Bell, Sms } from "../assets"; // Assuming Sms is the search icon
+import { Question, Bell, Search } from "../assets";
 
 const Header = ({ toggleSidebar }) => {
   return (
@@ -9,9 +9,13 @@ const Header = ({ toggleSidebar }) => {
           <input
             type="text"
             placeholder="Search type of keywords"
-            className="p-2 bg-gray-100 rounded-full w-full sm:w-2/3 lg:w-full pl-10 text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className="p-2 bg-white rounded-xl w-full sm:w-2/3 lg:w-full pr-10 pl-4 border"
           />
-          <img src={Sms} alt="Search Icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <img
+            src={Search}
+            alt="Search Icon"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2"
+          />
         </div>
         <div className="flex items-center space-x-2">
           <button

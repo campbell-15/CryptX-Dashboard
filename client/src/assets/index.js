@@ -8,6 +8,7 @@ import Wallet2 from "./wallet-minus.svg";
 import Graph from "./graph.svg";
 import Question from "./CryptX Dashboard help.svg";
 import Bell from "./notification.svg";
+import Search from "./search-normal.svg"
 
 export {
   Logo,
@@ -20,4 +21,5 @@ export {
   Graph,
   Question,
   Bell,
+  Search
 };
