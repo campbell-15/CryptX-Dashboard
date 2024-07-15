@@ -3,16 +3,17 @@ import { Question, Bell, Search } from "../assets";
 import { UserButton, useUser } from "@clerk/clerk-react";
 
 const Header = ({ toggleSidebar }) => {
-  const { firstName, lastName } = useUser();
-  const [userName, setUserName] = useState("");
+  const { isLoaded, isSignedIn, user } = useUser();
+  const [userName, setUserName] = useState("Loading...");
 
   useEffect(() => {
-    if (firstName && lastName) {
-      setUserName(`${firstName} ${lastName}`);
+    if (isLoaded && isSignedIn && user) {
+      const fullName = `${user.firstName || ""} ${user.lastName || ""}`.trim();
+      setUserName(fullName || "User");
     } else {
-      setUserName("Loading..."); 
+      setUserName("Loading...");
     }
-  }, [firstName, lastName]);
+  }, [isLoaded, isSignedIn, user]);
 
   return (
     <>
@@ -55,7 +56,7 @@ const Header = ({ toggleSidebar }) => {
             </div>
             <div className="hidden lg:flex flex-col text-left">
               <span className="text-gray-600 font-semibold">{userName}</span>
-              <span className="text-gray-400">@{userName.toLowerCase()}</span>
+              <span className="text-gray-400">@{userName.toLowerCase().replace(" ", "")}</span>
             </div>
           </div>
         </div>
