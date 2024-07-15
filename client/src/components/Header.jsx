@@ -5,21 +5,23 @@ const Header = ({ toggleSidebar }) => {
   return (
     <>
       <div className="flex justify-between items-center p-5 bg-white relative">
-        <div className="flex items-center w-full lg:w-1/3 relative">
-          <input
-            type="text"
-            placeholder="Search type of keywords"
-            className="p-2 bg-white rounded-xl w-full pr-10 pl-4 border z-0"
-          />
-          <img
-            src={Search}
-            alt="Search Icon"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2"
-          />
+        <div className="flex items-center w-full lg:w-1/3 relative mr-4">
+          <div className="relative w-full">
+            <input
+              type="text"
+              placeholder="Search type of keywords"
+              className="p-2 bg-white rounded-xl pr-10 pl-4 border w-full"
+            />
+            <img
+              src={Search}
+              alt="Search Icon"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2"
+            />
+          </div>
         </div>
         <div className="flex items-center space-x-2">
           <button
-            className="lg:hidden w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center "
+            className="lg:hidden w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center"
             onClick={toggleSidebar}
           >
             <i className="icon-menu"></i>
