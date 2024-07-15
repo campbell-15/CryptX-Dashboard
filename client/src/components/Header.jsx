@@ -24,7 +24,10 @@ const Header = ({ toggleSidebar }) => {
           >
             <i className="icon-menu"></i>
           </button>
-          <div className="hidden lg:flex items-center space-x-2">
+          <div
+            className="hidden lg:flex items-center space-x-3"
+            style={{ marginRight: "56px" }}
+          >
             <div className="w-8 h-8 flex items-center justify-center">
               <img src={Bell} alt="Bell Icon" />
             </div>
@@ -32,9 +35,9 @@ const Header = ({ toggleSidebar }) => {
               <img src={Question} alt="Question Icon" />
             </div>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-6">
             <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
-            <div className="flex flex-col text-left">
+            <div className="hidden lg:flex flex-col text-left">
               <span className="text-gray-600 font-semibold">Laurice</span>
               <span className="text-gray-400">@laurice22</span>
             </div>
