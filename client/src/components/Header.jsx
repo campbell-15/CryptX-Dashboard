@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Question, Bell, Search } from "../assets";
+import { UserButton, useUser } from "@clerk/clerk-react";
 
 const Header = ({ toggleSidebar }) => {
+  const { firstName, lastName } = useUser();
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    if (firstName && lastName) {
+      setUserName(`${firstName} ${lastName}`);
+    } else {
+      setUserName("Loading..."); 
+    }
+  }, [firstName, lastName]);
+
   return (
     <>
       <div className="flex justify-between items-center p-5 bg-white relative">
@@ -21,7 +33,7 @@ const Header = ({ toggleSidebar }) => {
         </div>
         <div className="flex items-center space-x-2">
           <button
-            className="lg:hidden w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center"
+            className="lg:hidden w-7 h-7 bg-gray-200 rounded-full flex items-center justify-center"
             onClick={toggleSidebar}
           >
             <i className="icon-menu"></i>
@@ -38,10 +50,12 @@ const Header = ({ toggleSidebar }) => {
             </div>
           </div>
           <div className="flex items-center space-x-6">
-            <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
+            <div className="w-8 h-8 ">
+              <UserButton className="w-full h-full" />
+            </div>
             <div className="hidden lg:flex flex-col text-left">
-              <span className="text-gray-600 font-semibold">Laurice</span>
-              <span className="text-gray-400">@laurice22</span>
+              <span className="text-gray-600 font-semibold">{userName}</span>
+              <span className="text-gray-400">@{userName.toLowerCase()}</span>
             </div>
           </div>
         </div>
