@@ -7,3 +7,138 @@
 .center-auth {
   @apply flex justify-center items-center min-h-screen;
 }
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s;
+  position: relative;
+}
+
+.sidebar.closed {
+  width: 80px;
+}
+
+.sidebar .toggle-btn {
+  position: absolute;
+  top: 28px;
+  right: 5px; /* Adjust to ensure visibility */
+  background-color: #ffffff;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%; /* Optional: For a rounded button */
+}
+
+.sidebar .logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.sidebar.closed .logo h1 {
+  opacity: 0;
+  transform: scale(0); /* Optional: Add a shrinking effect */
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s, padding 0.3s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: #eaeaea;
+}
+
+.menu-item i {
+  margin-right: 10px;
+}
+
+.menu-item span {
+  transition: opacity 0.3s, width 0.3s; /* Transition for smooth text hide/show */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar.closed .menu-item span {
+  width: 0;
+  opacity: 0;
+}
+
+.overview-icon::before {
+  content: '\f15c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 15px;
+  color: #6154F0;
+}
+
+.overview {
+  color: #6154F0;
+}
+
+.chart-icon::before {
+  content: '\f080';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 15px;
+}
+
+.transactions-icon::before {
+  content: '\f0ec';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 15px;
+}
+
+.wallet-icon::before {
+  content: '\f555';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 15px;
+}
+
+.mailbox-icon::before {
+  content: '\f0e0';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 15px;
+}
+
+.settings-icon::before {
+  content: '\f013';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 15px;
+}
+
+.logout-icon::before {
+  content: '\f2f5';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 15px;
+}
