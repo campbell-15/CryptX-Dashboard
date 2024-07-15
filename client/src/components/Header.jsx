@@ -4,12 +4,12 @@ import { Question, Bell, Search } from "../assets";
 const Header = ({ toggleSidebar }) => {
   return (
     <>
-      <div className="flex justify-between items-center p-5 bg-white">
+      <div className="flex justify-between items-center p-5 bg-white relative">
         <div className="flex items-center w-full lg:w-1/3 relative">
           <input
             type="text"
             placeholder="Search type of keywords"
-            className="p-2 bg-white rounded-xl w-full sm:w-2/3 lg:w-full pr-10 pl-4 border"
+            className="p-2 bg-white rounded-xl w-full pr-10 pl-4 border z-0"
           />
           <img
             src={Search}
@@ -19,7 +19,7 @@ const Header = ({ toggleSidebar }) => {
         </div>
         <div className="flex items-center space-x-2">
           <button
-            className="lg:hidden w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center"
+            className="lg:hidden w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center "
             onClick={toggleSidebar}
           >
             <i className="icon-menu"></i>

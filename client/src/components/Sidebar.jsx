@@ -13,7 +13,7 @@ import {
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div
-      className={`bg-gray-100 w-64 h-screen p-6 fixed lg:static ${
+      className={`bg-gray-100 w-64 h-screen p-6 fixed lg:static z-10 ${
         isOpen ? "block" : "hidden"
       } lg:block`}
     >
