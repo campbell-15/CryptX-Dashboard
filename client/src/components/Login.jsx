@@ -3,7 +3,7 @@ import { SignIn } from "@clerk/clerk-react";
 
 const Login = () => {
   return (
-    <div className="center-auth">
+    <div className="center-auth bg-purple-600">
       <SignIn path="/login" routing="path" mode=" modal" signUpUrl="/" />
     </div>
   );
