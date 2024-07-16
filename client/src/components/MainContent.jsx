@@ -64,38 +64,46 @@ const MainContent = () => {
   return (
     <div className="flex flex-col p-4 w-full h-full overflow-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4 flex-1">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-7">
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
-            <div className="flex justify-between items-center">
-              <img src={Cu2} alt="Bit" />
-              <div className="text-lg font-bold">$40,291</div>
+            <div className="flex justify-between items-center mb-2">
+              <img src={Cu2} alt="Bit" className="w-10 h-10" />
               <div className="text-green-500">+0.25%</div>
             </div>
-            <div className="text-gray-400">Bitcoin - BTC</div>
+            <div>
+              <div className="text-3xl font-bold">$40,291</div>
+              <div className="text-gray-400">Bitcoin - BTC</div>
+            </div>
           </div>
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
-            <div className="flex justify-between items-center">
-              <img src={Cu1} alt="Eth" />
-              <div className="text-lg font-bold">$18,291</div>
+            <div className="flex justify-between items-center mb-2">
+              <img src={Cu1} alt="Eth" className="w-10 h-10" />
               <div className="text-green-500">+0.25%</div>
             </div>
-            <div className="text-gray-400">Ethereum - ETH</div>
+            <div>
+              <div className="text-3xl font-bold">$18,291</div>
+              <div className="text-gray-400">Ethereum - ETH</div>
+            </div>
           </div>
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
-            <div className="flex justify-between items-center">
-              <img src={Cu4} alt="lit" />
-              <div className="text-lg font-bold">$8,291</div>
+            <div className="flex justify-between items-center mb-2">
+              <img src={Cu4} alt="lit" className="w-10 h-10" />
               <div className="text-green-500">+0.25%</div>
             </div>
-            <div className="text-gray-400">Litecoin - ITL</div>
+            <div>
+              <div className="text-3xl font-bold">$8,291</div>
+              <div className="text-gray-400">Litecoin - ITL</div>
+            </div>
           </div>
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
-            <div className="flex justify-between items-center">
-              <img src={Cu3} alt="card" />
-              <div className="text-lg font-bold">$3,291</div>
+            <div className="flex justify-between items-center mb-2">
+              <img src={Cu3} alt="card" className="w-10 h-10" />
               <div className="text-red-500">-2.05%</div>
             </div>
-            <div className="text-gray-400">Cardano - ADA</div>
+            <div>
+              <div className="text-3xl font-bold">$3,291</div>
+              <div className="text-gray-400">Cardano - ADA</div>
+            </div>
           </div>
         </div>
         <div className="bg-white p-4 rounded shadow h-full flex flex-col justify-between">
