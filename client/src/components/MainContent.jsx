@@ -1,23 +1,50 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Line } from "react-chartjs-2";
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
 
 const MainContent = () => {
-  const [btcPrice, setBtcPrice] = useState(null);
+  const [btcHistory, setBtcHistory] = useState([]);
 
   useEffect(() => {
-    const fetchBtcPrice = async () => {
+    const fetchBtcHistory = async () => {
       try {
         const response = await axios.get(
-          "https://api.coindesk.com/v1/bpi/currentprice/BTC.json"
+          "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart",
+          {
+            params: {
+              vs_currency: "usd",
+              days: 180,
+            },
+          }
         );
-        setBtcPrice(response.data.bpi.USD.rate);
+        const prices = response.data.prices.map(price => ({
+          time: new Date(price[0]).toLocaleDateString(),
+          value: price[1],
+        }));
+        setBtcHistory(prices);
       } catch (error) {
-        console.error("Error fetching BTC price:", error);
+        console.error("Error fetching BTC historical prices:", error);
       }
     };
 
-    fetchBtcPrice();
+    fetchBtcHistory();
   }, []);
+
+  const chartData = {
+    labels: btcHistory.map(price => price.time),
+    datasets: [
+      {
+        label: 'BTC Price (USD)',
+        data: btcHistory.map(price => price.value),
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        fill: true,
+      },
+    ],
+  };
 
   return (
     <div className="flex flex-col p-4 w-full h-full overflow-auto">
@@ -54,10 +81,37 @@ const MainContent = () => {
         </div>
         <div className="bg-white p-4 rounded shadow h-full flex flex-col justify-between">
           <div className="text-lg font-bold">BTC Prices</div>
-          <div className="mt-4 flex-1 flex items-center justify-center">
-            <div className="text-2xl font-bold">
-              {btcPrice ? `$${btcPrice}` : "Loading..."}
-            </div>
+          <div className="mt-4 flex-1">
+            <Line data={chartData} options={{
+              responsive: true,
+              scales: {
+                x: {
+                  display: true,
+                  title: {
+                    display: true,
+                    text: 'Date',
+                  },
+                },
+                y: {
+                  display: true,
+                  title: {
+                    display: true,
+                    text: 'Price (USD)',
+                  },
+                },
+              },
+              plugins: {
+                tooltip: {
+                  mode: 'index',
+                  intersect: false,
+                },
+                legend: {
+                  display: true,
+                  position: 'top',
+                },
+              },
+              maintainAspectRatio: false,
+            }} />
           </div>
         </div>
       </div>
