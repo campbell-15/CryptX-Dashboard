@@ -9,6 +9,10 @@ import Graph from "./graph.svg";
 import Question from "./CryptX Dashboard help.svg";
 import Bell from "./notification.svg";
 import Search from "./search-normal.svg";
+import Cu1 from "./CryptX Dashboard.svg";
+import Cu2 from "./CryptX Dashboard Group.svg";
+import Cu3 from "./CryptX Dashboard Group 335.svg";
+import Cu4 from "./CryptX Dashboard Group (1).svg";
 
 export {
   Logo,
@@ -21,5 +25,9 @@ export {
   Graph,
   Question,
   Bell,
-  Search
+  Search,
+  Cu1,
+  Cu2,
+  Cu3,
+  Cu4,
 };

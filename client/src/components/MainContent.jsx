@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Cu1, Cu2, Cu3, Cu4 } from "../assets";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -53,8 +54,8 @@ const MainContent = () => {
     datasets: [
       {
         data: btcHistory.map((price) => price.value),
-        borderColor: "rgba(75, 192, 192, 1)",
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgb(153,50,204)",
+        backgroundColor: "rgba(75, 192, 192, )",
         fill: true,
       },
     ],
@@ -66,6 +67,7 @@ const MainContent = () => {
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
+              <img src={Cu2} alt="Bit" />
               <div className="text-lg font-bold">$40,291</div>
               <div className="text-green-500">+0.25%</div>
             </div>
@@ -73,6 +75,7 @@ const MainContent = () => {
           </div>
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
+              <img src={Cu1} alt="Eth" />
               <div className="text-lg font-bold">$18,291</div>
               <div className="text-green-500">+0.25%</div>
             </div>
@@ -80,6 +83,7 @@ const MainContent = () => {
           </div>
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
+              <img src={Cu4} alt="lit" />
               <div className="text-lg font-bold">$8,291</div>
               <div className="text-green-500">+0.25%</div>
             </div>
@@ -87,6 +91,7 @@ const MainContent = () => {
           </div>
           <div className="bg-white p-4 rounded shadow flex flex-col justify-between">
             <div className="flex justify-between items-center">
+              <img src={Cu3} alt="card" />
               <div className="text-lg font-bold">$3,291</div>
               <div className="text-red-500">-2.05%</div>
             </div>
