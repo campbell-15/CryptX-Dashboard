@@ -1,9 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend
+);
 
 const MainContent = () => {
   const [btcHistory, setBtcHistory] = useState([]);
@@ -20,7 +35,7 @@ const MainContent = () => {
             },
           }
         );
-        const prices = response.data.prices.map(price => ({
+        const prices = response.data.prices.map((price) => ({
           time: new Date(price[0]).toLocaleDateString(),
           value: price[1],
         }));
@@ -34,13 +49,12 @@ const MainContent = () => {
   }, []);
 
   const chartData = {
-    labels: btcHistory.map(price => price.time),
+    labels: btcHistory.map((price) => price.time),
     datasets: [
       {
-        label: 'BTC Price (USD)',
-        data: btcHistory.map(price => price.value),
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        data: btcHistory.map((price) => price.value),
+        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
         fill: true,
       },
     ],
@@ -82,36 +96,38 @@ const MainContent = () => {
         <div className="bg-white p-4 rounded shadow h-full flex flex-col justify-between">
           <div className="text-lg font-bold">BTC Prices</div>
           <div className="mt-4 flex-1">
-            <Line data={chartData} options={{
-              responsive: true,
-              scales: {
-                x: {
-                  display: true,
-                  title: {
+            <Line
+              data={chartData}
+              options={{
+                responsive: true,
+                scales: {
+                  x: {
                     display: true,
-                    text: 'Date',
+                    title: {
+                      display: true,
+                      text: "Date",
+                    },
+                  },
+                  y: {
+                    display: true,
+                    title: {
+                      display: true,
+                      text: "Price (USD)",
+                    },
                   },
                 },
-                y: {
-                  display: true,
-                  title: {
-                    display: true,
-                    text: 'Price (USD)',
+                plugins: {
+                  tooltip: {
+                    mode: "index",
+                    intersect: false,
+                  },
+                  legend: {
+                    display: false,
                   },
                 },
-              },
-              plugins: {
-                tooltip: {
-                  mode: 'index',
-                  intersect: false,
-                },
-                legend: {
-                  display: true,
-                  position: 'top',
-                },
-              },
-              maintainAspectRatio: false,
-            }} />
+                maintainAspectRatio: false,
+              }}
+            />
           </div>
         </div>
       </div>
